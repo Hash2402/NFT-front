@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="nft-detail">
+    <img src="{{ url_for('static', filename='images/' ~ nft.image) }}" alt="{{ nft.name }}">
+    <h2>{{ nft.name }}</h2>
+    <p>Price: {{ nft.price }}</p>
+    <button>Buy Now</button>
+</div>
+{% endblock %}

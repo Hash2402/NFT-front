@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="nft-list">
+    <h2>Available NFTs</h2>
+    {% if nfts %}
+        {% for nft in nfts %}
+        <div class="nft-item">
+            <img src="{{ url_for('static', filename='images/' ~ nft.image) }}" alt="{{ nft.name }}">
+            <h2>{{ nft.name }}</h2>
+            <p>{{ nft.description }}</p>
+            <p>URI: <a href="{{ nft.uri }}" target="_blank">{{ nft.uri }}</a></p>
+            <p>Price: {{ nft.price }}</p>
+            <a href="{{ url_for('nft_detail', nft_id=nft.id) }}">View Details</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="color: brown;font-size: larger;">None</p>
+    {% endif %}
+</div>
+{% endblock %}

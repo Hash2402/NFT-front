@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="list-nft">
+    <h2>List a New NFT</h2>
+    <form method="POST" action="{{ url_for('list_nft') }}">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="uri">URI:</label>
+            <input type="text" id="uri" name="uri" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" required>
+        </div>
+        <button type="submit" class="btn">List NFT</button>
+    </form>
+</div>
+{% endblock %}
